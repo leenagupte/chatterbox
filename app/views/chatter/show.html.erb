@@ -1,1 +1,24 @@
-<H1>Hello!</H1>
+<h1 class="govuk-heading-xl">Chatterbox</h1>
+
+<div class="govuk-grid-row govuk-body">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="chatter" method="post">
+      <%= render "govuk_publishing_components/components/textarea", {
+        label: {
+          text: "What would you like to ask?"
+        },
+        name: "question_text",
+        hint: "",
+        rows: 5
+      } %>
+
+      <%= render "govuk_publishing_components/components/button", {
+        text: "Submit"
+      } %>
+    </form>
+  </div>
+</div>
+
+<% if @question_text.present? %>
+  <p class="govuk-body"> Hello there! </p>
+<% end %>

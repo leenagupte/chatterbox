@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   get "/", to: redirect("/chatter")
 
   get "/chatter", to: "chatter#show"
+  post "/chatter", to: "chatter#ask"
 end
