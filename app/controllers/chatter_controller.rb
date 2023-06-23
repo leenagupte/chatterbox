@@ -7,17 +7,7 @@ class ChatterController < ApplicationController
 
   def ask
     @question_text = strip_tags(params[:question_text]).presence
-
-    client = OpenAI::Client.new
-
-    response = client.chat(
-      parameters: {
-          model: "gpt-3.5-turbo", # Required.
-          messages: [{ role: "user", content: @question_text}], # Required.
-          temperature: 0.7,
-      })
-
-    @chat_response = response.dig("choices", 0, "message", "content")
+    @chat_response = OpenAIService.new(@question_text).call
 
     render :show
   end
