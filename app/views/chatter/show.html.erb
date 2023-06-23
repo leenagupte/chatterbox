@@ -19,6 +19,11 @@
   </div>
 </div>
 
-<% if @question_text.present? %>
+<% if @question_text.present? && @chat_response.present? %>
   <p class="govuk-body"> Hello there! </p>
+  <p class="govuk-body">You asked the following question</p>
+  <p class="govuk-body"><%= @question_text %></p>
+
+  <p class="govuk-body">The answer is:</p>
+  <p class="govuk-body"><%= @chat_response %></p>
 <% end %>
