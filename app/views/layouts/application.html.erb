@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>Chatterbox</title>
+    <link rel="stylesheet" href="https://l2c.london.cloudapps.digital/govuk-frontend.css">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -9,7 +10,9 @@
     <%= stylesheet_link_tag "application" %>
   </head>
 
-  <body class="govuk-template__body">
-    <%= yield %>
+  <body>
+    <div class="govuk-width-container">
+      <%= yield %>
+    </div>
   </body>
 </html>
